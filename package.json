@@ -1,0 +1,23 @@
+{
+  "name": "FactBot",
+  "version": "1.0.0",
+  "description": "FactBot by Renaldy Pratama",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renaldypr/FactBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renaldypr/FactBot/issues"
+  },
+  "homepage": "https://github.com/renaldypr/FactBot#readme",
+  "dependencies": {
+    "claudia-bot-builder": "^4.5.0"
+  }
+}
