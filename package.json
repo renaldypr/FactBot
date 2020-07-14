@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/renaldypr/FactBot#readme",
   "dependencies": {
-    "claudia-bot-builder": "^4.5.0"
+    "axios": "^0.19.2",
+    "claudia-bot-builder": "^4.5.0",
+    "dotenv": "^8.2.0"
   }
 }
