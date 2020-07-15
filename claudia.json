@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "FactBot-executor",
+    "name": "FactBot",
+    "region": "ap-southeast-1"
+  },
+  "api": {
+    "id": "qi5zrpp503",
+    "module": "bot"
+  }
+}
