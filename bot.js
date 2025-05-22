@@ -1,21 +1,27 @@
-const botBuilder = require('claudia-bot-builder')
-const { searchWikipedia } = require('./src/api/wikipedia')
-require('dotenv').config()
+require('dotenv').config();
+const { Bot } = require('grammy');
+const { searchWikipedia } = require('./src/api/wikipedia');
 
-function FactBot (request) {
-  const query = request.text
-  return searchWikipedia(query)
+// Instantiate the bot
+const bot = new Bot(process.env.BOT_TOKEN);
+
+// Add a message handler
+bot.on('message', async (ctx) => {
+  const query = ctx.message.text;
+  searchWikipedia(query)
     .then(res => {
-      const answer = res.data.data
-      if (!answer.length) {
-        return 'Sorry, the item you searched is not found.'
+      const answer = res.data.data;
+      if (answer && answer.length) { // check if answer is not null and not empty
+        ctx.reply(answer);
+      } else {
+        ctx.reply('Sorry, the item you searched is not found.');
       }
-      return answer
     })
     .catch(error => {
-      console.log(error)
-      return 'Sorry, I encountered an error.'
-    })
-}
+      console.error(error);
+      ctx.reply('Sorry, I encountered an error.');
+    });
+});
 
-module.exports = botBuilder(FactBot);
+// Start the bot
+bot.start();
